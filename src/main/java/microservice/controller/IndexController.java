@@ -21,6 +21,14 @@ public class IndexController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @GetMapping("/{id}/relatoriopdf")
+    public ResponseEntity<Usuario> relatorio(@PathVariable (value = "id") Long id){
+
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
+
+        return new ResponseEntity<Usuario>(usuario.get(), HttpStatus.OK);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> init(@PathVariable (value = "id") Long id){
 
