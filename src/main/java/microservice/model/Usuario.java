@@ -17,8 +17,9 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    private String nome;
+    private String login;
     private String senha;
+    private String nome;
 
     public Long getId(){
         return id;
@@ -28,6 +29,21 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
+    public String getLogin(){
+        return login;
+    }
+    public void setLogin(String login){
+        this.login = login;
+    }
+
+    public String getSenha(){
+        return senha;
+    }
+
+    public void setSenha(String senha){
+        this.senha = senha;
+    }
+
     public String getNome(){
         return nome;
     }
@@ -35,6 +51,7 @@ public class Usuario implements Serializable {
     public void setNome(String nome){
         this.nome = nome;
     }
+
 
     @Override
     public boolean equals(Object o) {
