@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
 
     @GetMapping(value = "/")
-    public ResponseEntity init(@RequestParam(value = "nome", required= true, defaultValue = "Nome não informado!") String nome){
+    public ResponseEntity init(@RequestParam(value = "nome", required= true, defaultValue = "Nome não informado!") String nome,
+                               @RequestParam("salario") Long salario){
         System.out.println("Parametro sendo recebido!" + nome);
-        return new ResponseEntity("Begin !" + nome, HttpStatus.OK);
+        return new ResponseEntity("Begin !" + nome + "salario " + salario, HttpStatus.OK);
     }
 
 
