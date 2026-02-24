@@ -1,11 +1,10 @@
 package microservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -20,6 +19,10 @@ public class Usuario implements Serializable {
     private String login;
     private String senha;
     private String nome;
+
+
+    @OneToMany(mappedBy = "usuario", orphanRemoval = true, cascade = CascadeType.ALL)
+    private List<Telefone> telefone = new ArrayList<Telefone>();
 
     public Long getId(){
         return id;
@@ -52,6 +55,13 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
+    public List<Telefone> getTelefone(){
+        return telefone;
+    }
+
+    public void setTelefone(List<Telefone> telefone){
+        this. telefone = telefone;
+    }
 
     @Override
     public boolean equals(Object o) {

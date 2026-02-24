@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+
 @Controller
 @RequestMapping("/usuario")
 public class IndexController {
@@ -46,6 +47,7 @@ public class IndexController {
 
     @PostMapping("/")
     public ResponseEntity<Usuario> cadastrar(@RequestBody Usuario usuario){
+
 
         Usuario usuarioSalvo = usuarioRepository.save(usuario);
 
