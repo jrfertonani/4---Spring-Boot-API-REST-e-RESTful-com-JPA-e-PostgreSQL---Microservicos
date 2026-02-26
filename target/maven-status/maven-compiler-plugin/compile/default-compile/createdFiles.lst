@@ -1,4 +1,5 @@
 microservice\controller\IndexController.class
 microservice\model\Usuario.class
+microservice\model\Telefone.class
 microservice\MicroserviceApplication.class
 microservice\repository\UsuarioRepository.class
